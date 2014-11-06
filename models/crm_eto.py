@@ -37,6 +37,7 @@ class leads(models.Model):
     project_code = fields.Char('Project Code', size=7, required=False, help="Six digit code for each project like 'ABC026'")    
     project_name = fields.Char('Project Code Name', size=128, required=False, help="Typically the customer's name for the product or their name for the machine.")
     machine_rate = fields.Integer('Machine Rate', required=False, help="Number of parts per minute requested by the client.")
+    #This selection should probably come from a new class of "machine_model".
     machine_model= fields.Selection([
                                        ('l2','Level 2'),
                                        ('l3','Level 3'),

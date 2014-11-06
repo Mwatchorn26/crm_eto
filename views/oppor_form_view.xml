@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<openerp>
+    <data>
+   		<!-- 							-->
+		<!-- crm.lead Inherit Addon		-->
+		<!-- 							-->				
+		<record model="ir.ui.view" id="crm_case_form_view_oppor">
+	    	<field name="name">CRM - Opportuntities Form - E2O Inherit</field>
+	    	<field name="model">crm.lead</field>
+	    	<field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+	    	<field name="arch" type="xml">
+		       	<data>
+					<!-- Opportunity Extras -->
+               	   	<xpath expr="//sheet/div[2]" position="after">
+               	   		<div id="crm_o2e_addons">
+                   			<field name="project_code"/>
+                   			<field name="project_name"/>
+                   			<field name="machine_rate"/>
+                  			<field name="machine_model"/>
+						</div>
+                   	</xpath>
+               	</data>
+	    	</field>
+		</record>
+	</data>
+</openerp>
+
+
+
+
+

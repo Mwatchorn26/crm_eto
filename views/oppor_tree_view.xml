@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<openerp>
+    <data>
+	        <!-- 
+	        Make the Tree view editable. 
+	        Rearrange the list of fields.
+	        Added Project field based on the new crm.project field 
+	        -->	        
+		   <record model="ir.ui.view" id="crm_e2o_oppor_tree_view">
+            <field name="name">Opportunities Tree Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+            	<data>
+            		<tree position="attributes">               
+						<attribute name="editable">top</attribute>
+                	</tree>
+                </data>
+            </field>
+        </record>
+	</data>
+</openerp>

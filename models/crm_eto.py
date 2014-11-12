@@ -27,26 +27,29 @@ from openerp import fields, models
 #
 #    name = fields.Char()
 
+#Security example:
+#access_crm_eto_eto_model,access_crm_eto_eto_model,model_crm_eto_eto_model,,1,1,1,1
+
 class leads(models.Model):
     """Engineered To Order Custom CRM Opportunity Additions
     
     This module adds custom CRM extras specific to the Engineer-To-Order manufacturing company. 
     Project specific information is included regarding the opportunity."""
-    _inherit = "crm.crm_lead"
+    _inherit = "crm.lead"
     #Add the new columns to the database table. (These are specifically for opportunities, but  Opportunities and Leads share the same table.)
     project_code = fields.Char('Project Code', size=7, required=False, help="Six digit code for each project like 'ABC026'")    
-    project_name = fields.Char('Project Code Name', size=128, required=False, help="Typically the customer's name for the product or their name for the machine.")
+    project_name = fields.Char('Project Name', size=128, required=False, help="Typically the customer's name for the product or their name for the machine.")
     machine_rate = fields.Integer('Machine Rate', required=False, help="Number of parts per minute requested by the client.")
     #This selection should probably come from a new class of "machine_model".
-    machine_model= fields.Selection([
-                                       ('l2','Level 2'),
-                                       ('l3','Level 3'),
-                                       ('l3_polymist','L3 Polymist'),
-                                       ('l3_one_and_done','L3 One and Done'),
-                                       ('l3_pod_loader','L3 Pod Loader'),
-                                       ('l3_loader_and_one','L3 Pod Loader & One and Done'),
-                                       ('other','Other'),
-                                       ], string='Model', default='l3_one_and_done', readonly=True, required=False, copy=False, help="Select the most appropriate model")
+    machine_model= fields.Many2one('crm_eto.eto_model', string="Machine Model",required=False, help="Select the most appropriate model")
     
 
+class product_model(models.Model):
+    """Product model for the potential sale 
     
+    Various models of engineer to order products may be available for 
+    the sales team to sell. If this is the case, then in the opportunity the 
+    salesman can select which model the opportunity is for."""
+    _name = "crm_eto.eto_model"
+    name = fields.Char('Model', required=True)
+    description = fields.Text('Description')

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <record id="crm_e2o.crm_e2o_demo" model="crm_e2o">
-            <field name="name">My first record for model 'crm_e2o.crm_e2o'</field>
-        </record>
-
-    </data>
-</openerp>

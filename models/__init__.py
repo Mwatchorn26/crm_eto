@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-import crm_e2o
+import crm_eto

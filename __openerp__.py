@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "crm_e2o",
+    'name': "CRM - Engineer to Order",
 
     'summary': """
-        CRM additions for an Engineered To Order (e2o) company
+        CRM additions for an Engineered To Order (eto) company
         """,
 
     'description': """
@@ -17,16 +17,14 @@
 
     # Categories can be used to filter modules in modules listing
     # Check <odoo>/addons/base/module/module_data.xml of the full list
-    'category': 'CRM',
+    'category': 'Customer Relationship Management',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'crm'],
-    'data': ["security/ir.model.access.csv",
-             "views/oppor_tree_view.xml"],
-
-    'demo': ["data/crm_e2o_demo.xml"],
-
-    'tests': [
-    ],
+    'data': ["views/oppor_tree_view.xml",
+             "views/oppor_form_view.xml",
+             "data/crm_eto_data.xml"],
+    'demo': [],
+    'tests': [],
 }

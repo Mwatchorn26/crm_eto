@@ -12,11 +12,17 @@
 		       	<data>
 					<!-- Opportunity Extras -->
                	   	<xpath expr="//sheet/div[2]" position="after">
-               	   		<div id="crm_o2e_addons">
-                   			<field name="project_code"/>
-                   			<field name="project_name"/>
-                   			<field name="machine_rate"/>
-                  			<field name="machine_model"/>
+               	   		<div id="crm_ote_addons">
+               	   			<group>
+	               	   			<group>
+	                   				<field name="project_code">Project Code</field>
+	                   				<field name="project_name">Project Name</field>
+								</group>
+								<group>                   			
+	                   				<field name="machine_rate">Machine Rate</field>
+	                  				<field name="machine_model">Machine Model</field>
+								</group>
+							</group>                  			
 						</div>
                    	</xpath>
                	</data>

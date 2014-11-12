@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_crm_e2o_crm_e2o,access_crm_e2o_crm_e2o,model_crm_e2o_crm_e2o,,1,0,0,0

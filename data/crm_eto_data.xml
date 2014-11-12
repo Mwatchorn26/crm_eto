@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="crm_eto.eto_model" id="eto_model_0" >
+            <field name="name">L2</field>
+            <field name="description">Level 2 Machine</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_1" >
+            <field name="name">L3</field>
+            <field name="description">Generic Level 3 Machine</field>
+        </record>        
+        <record model="crm_eto.eto_model" id="eto_model_2" >
+            <field name="name">L3 - Polymist</field>
+            <field name="description">Level 3 Polymist</field>
+        </record>        
+        <record model="crm_eto.eto_model" id="eto_model_3" >
+            <field name="name">L3 - One and Done</field>
+            <field name="description">Base Level 3 Machine - No Pod Loaders</field>
+        </record>        
+        <record model="crm_eto.eto_model" id="eto_model_4" >
+            <field name="name">L3 - Pod Loaders</field>
+            <field name="description">Pod Loader for a One and Done Level 3 Machine</field>
+        </record>        
+        <record model="crm_eto.eto_model" id="eto_model_5" >
+            <field name="name">Universal Closure</field>
+            <field name="description">Universal Assembly Closure Machine</field>
+        </record>
+    </data>
+</openerp>

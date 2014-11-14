@@ -25,5 +25,14 @@
             <field name="name">Universal Closure</field>
             <field name="description">Universal Assembly Closure Machine</field>
         </record>
+        
+                
+        <record model="crm_eto.machine_spec" id="mach_spec_0" >
+        	<field name="type=">process</field>
+            <field name="name">Universal Closure</field>
+            <field name="description">Universal Assembly Closure Machine</field>
+        </record>
+        
+        
     </data>
 </openerp>

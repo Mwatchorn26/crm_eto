@@ -27,7 +27,15 @@
                    	</xpath>
                    	<xpath expr="//page[@string='Internal Notes']" position="before">
                    		<page string="Machine Specs">
-                   			<field name="machine_spec_ids" widget="Many2one">Machine Specs:</field>
+                   			<!-- <field name="machine_spec_ids" widget="Many2one">Machine Specs:</field>-->
+                   			
+                   			<field name="machine_spec_ids">
+                                <tree string="Machine Specss" editable="bottom">                                    
+                                    <field name="name" widget="selection"/>
+                                    <field name="desc"/>
+                                </tree>
+                            </field>
+                            
                    		</page>                   
                    	</xpath>               	
                	</data>

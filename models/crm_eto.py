@@ -54,7 +54,7 @@ class leads(models.Model):
     detailed_specs = fields.Boolean('Detailed Specs', 
         help="Detailed specifications are provided.")
     detailed_specs_desc = fields.Text('Detailed Spec Requirements', 
-        help="Describe the Detailed Spec requirements.")
+        help="Describe the Detailed Sspec requirements.")
     cad_model = fields.Boolean('CAD Model', help="CAD models are provided.")
     cad_model_desc = fields.Text('CAD Model Details', 
         help="Describe the CAD model requirements.")
@@ -120,12 +120,16 @@ class machine_spec(models.Model):
     """
     _name = "crm_eto.machine_spec"
     opportunity_id = fields.Many2one('crm.lead')
+    spec=Many2one('crm_eto.spec_type')
+    Desc=fields.Text('Specification or Requirement Details')
+
+
+class spec_type(models.Model):
     type = fields.Selection([
                              ('process','Process Detail'),
                              ('quality','Quality Control')
                              ], readonly=True, required=True, copy=False)
     name = fields.Char('Name of Process or Quality Test', required=True)
-    desc = fields.Text('Details or Requirements')
 
 
 class product_model(models.Model):

@@ -26,22 +26,7 @@
 							</group>                  			
 						</div>
                    	</xpath>
-                   	<!-- 
-                   	<xpath expr="//page[@string='Internal Notes']" position="before">
-                   		<page string="Machine Specs">
-                   	
--->                   			<!-- <field name="machine_spec_ids" widget="Many2one">Machine Specs:</field>-->
-                   				<!--
-	                 		<field name="machine_spec_ids">
-                                <tree string="Machine Specs" editable="bottom">                                    
-                                    <field name="name" widget="selection"/>
-                                    <field name="desc"/>
-                                </tree>
-                            </field>
-                   		</page>                   
-                   	</xpath>   
-               	-->
-
+                  
 
 	            <page string="Internal Notes" position="before">
 	                <page string="Machine Specs">
@@ -49,13 +34,7 @@
 	                        <tree editable="bottom" string="Machine Specs">
 	                            <field name="spec_variant" widget="selection"/>
 								<field name="desc" />
-								<field name="spec_variant_pq" />								
-<!--	                            
-	                            <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
-	                            <field string="Timebox" name="timebox_id"/>
-	                            <button name="prev_timebox" type="object" string="Previous"/>
-	                            <button name="next_timebox" type="object" string="Next"/>
--->                        
+								<field name="spec_variant_pq" />            
 							</tree>
 	                    </field>
 	                </page>

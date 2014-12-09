@@ -124,6 +124,7 @@ class machine_spec(models.Model):
     _name = "crm_eto.machine_spec"
     opportunity_id = fields.Many2one('crm.lead')
     spec_variant=fields.Many2one('crm_eto.spec_variant')
+    spec_variant_pq=fields.Selection(string='Type', related='spec_variant.process_or_quality', readonly=True)
     desc=fields.Text('Specification or Requirement Details')
 
 
@@ -138,7 +139,7 @@ class spec_variant(models.Model):
     process_or_quality = fields.Selection([
                              ('process','Process Detail'),
                              ('quality','Quality Control')
-                             ], readonly=True, required=True, copy=False, default='process')
+                             ], required=True)
 
 
 class product_model(models.Model):

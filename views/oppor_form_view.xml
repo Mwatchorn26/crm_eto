@@ -49,6 +49,7 @@
 	                        <tree editable="bottom" string="Machine Specs">
 	                            <field name="spec_variant" widget="selection"/>
 								<field name="desc" />
+								<field name="spec_variant_pq" />								
 <!--	                            
 	                            <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
 	                            <field string="Timebox" name="timebox_id"/>
@@ -66,7 +67,7 @@
 		</record>
 		
 		<!-- Machine Specs Variants Tree View -->
-<!--		 
+		 
         <record id="crm_machine_spec_tree-view" model="ir.ui.view">
             <field name="name">crm_eto.machine_spec.tree</field>
             <field name="model">crm_eto.spec_variant</field>
@@ -77,9 +78,9 @@
                 </tree>
             </field>
         </record>
-		-->
+		
 		<!-- Machine Spec Variants Form View -->
-<!--		
+	
         <record id="crm_oppor_machine_spec_action" model="ir.actions.act_window">
             <field name="name">Spec Variant</field>
             <field name="res_model">crm_eto.spec_variant</field>
@@ -101,7 +102,6 @@
         			sequence="1" 
         			groups="base.group_no_one"/>
 		
-		-->
 	</data>
 </openerp>
 

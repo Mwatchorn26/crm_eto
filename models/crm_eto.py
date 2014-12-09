@@ -42,6 +42,7 @@ class leads(models.Model):
     project_name = fields.Char('Project Name', size=128, required=False, help="Typically the customer's name for the product or their name for the machine.")
     machine_rate = fields.Integer('Machine Rate', required=False, help="Number of parts per minute requested by the client.")
     machine_model= fields.Many2one('crm_eto.eto_model', string="Machine Model",required=False, help="Select the most appropriate model")
+    scrap_rate = fields.Char('Scrap Rate', size=50, required=False, help="The acceptable scrap rate as defined by the customer at the outset of the project.")
 
     #Project Dates:
     proposal_date = fields.Date('Proposal Date', help="Date the [next] proposal is due.")
@@ -49,6 +50,8 @@ class leads(models.Model):
     animation_date = fields.Date('Animation Date', help="Date the animation file(s) are due.")
     decision_date = fields.Date('Decision Date', help="Date the client anticipates a decision will be made.")
     delivery_date = fields.Date('Delivery Date', help="Date the client anticipates delivery to their facility.")
+   
+   
     
     #Process Details:
     detailed_specs = fields.Boolean('Detailed Specs', 
@@ -120,16 +123,22 @@ class machine_spec(models.Model):
     """
     _name = "crm_eto.machine_spec"
     opportunity_id = fields.Many2one('crm.lead')
-    spec=Many2one('crm_eto.spec_type')
-    Desc=fields.Text('Specification or Requirement Details')
+    spec_variant=fields.Many2one('crm_eto.spec_variant')
+    desc=fields.Text('Specification or Requirement Details')
 
 
-class spec_type(models.Model):
-    type = fields.Selection([
+class spec_variant(models.Model):
+    """ Individual Machine Specifications.
+    
+    Each Individual Spec variation for a machine.
+    """
+    _name = "crm_eto.spec_variant"
+    name = fields.Char('Name of Process or Quality Test', required=True)
+    
+    process_or_quality = fields.Selection([
                              ('process','Process Detail'),
                              ('quality','Quality Control')
-                             ], readonly=True, required=True, copy=False)
-    name = fields.Char('Name of Process or Quality Test', required=True)
+                             ], readonly=True, required=True, copy=False, default='process')
 
 
 class product_model(models.Model):

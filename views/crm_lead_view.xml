@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<openerp>
+    <data>
+	        <!-- 
+	        Add the "Validated By" field to both the Form and the Tree views.
+	        -->	        
+		   <record model="ir.ui.view" id="crm_eto_lead_tree_view">
+            <field name="name">CRM Leads Tree Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="arch" type="xml">
+        		<field name="name" position="after">               
+					<field name="lead_validated_by">Validated</field>
+                <button string="Validate Lead"
+                    type="object"
+                    name="action_button_validate_lead"
+                    icon="gtk-index"
+                    attrs="{'invisible':[('lead_validated_by','!=',False)]}"/>
+            	</field>
+            </field>
+        </record>   
+            
+		<record model="ir.ui.view" id="crm_eto_lead_form_view">
+            <field name="name">CRM Leads Form Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+        		<field name="user_id" position="after">               
+					<field name="lead_validated_by" />
+            	</field>
+            </field>
+        </record>
+        
+		<record model="ir.ui.view" id="crm_eto_lead_search_view">
+            <field name="name">CRM Leads Search Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+        		<filter string="Available for mass mailing" position="after">               
+					 <separator />
+                    <filter string="Validation Required" name="lead_validated_by" domain="[('lead_validated_by','=',False)]"/>
+            	</filter>
+            </field>
+        </record>
+        
+        
+                   
+	</data>
+</openerp>

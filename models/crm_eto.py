@@ -50,71 +50,25 @@ class leads(models.Model):
     animation_date = fields.Date('Animation Date', help="Date the animation file(s) are due.")
     decision_date = fields.Date('Decision Date', help="Date the client anticipates a decision will be made.")
     delivery_date = fields.Date('Delivery Date', help="Date the client anticipates delivery to their facility.")
-   
-   
-    
-    #Process Details:
-    detailed_specs = fields.Boolean('Detailed Specs', 
-        help="Detailed specifications are provided.")
-    detailed_specs_desc = fields.Text('Detailed Spec Requirements', 
-        help="Describe the Detailed Sspec requirements.")
-    cad_model = fields.Boolean('CAD Model', help="CAD models are provided.")
-    cad_model_desc = fields.Text('CAD Model Details', 
-        help="Describe the CAD model requirements.")
-    part_drawings = fields.Boolean('Part Drawings', 
-        help="Detailed specifications are provided.")
-    part_drawings_desc = fields.Text('Part Drawing Requirements', 
-        help="Describe the Part Drawing requirements.")
-    axial_orientation = fields.Boolean('Vision', 
-        help="Detailed specifications are provided.")
-    axial_orientation_desc = fields.Text('Vision Details', 
-        help="Describe the Detailed Spec requirements.")
-    samples = fields.Boolean('Vision', 
-        help="Detailed specifications are provided.")
-    samples_desc = fields.Text('Vision Details', 
-        help="Describe the Detailed Spec requirements.")
-    mbu_axis = fields.Boolean('MBU Axis', 
-        help="Detailed specifications are provided.")
-    mbu_desc = fields.Text('MBU Axis Details', 
-        help="Describe the Detailed Spec requirements.")
-    silicone = fields.Boolean('Silicone', 
-        help="Detailed specifications are provided.")
-    silicone_desc = fields.Text('Silicone Requirements', 
-        help="Describe the silicone requirements.")
-    torque = fields.Boolean('Torque', 
-        help="Detailed specifications are provided.")
-    torque_desc = fields.Text('Torque Requirements', 
-        help="Describe the torque requirements.")
-    other_proc = fields.Boolean('Other Process', 
-        help="The product requires another type of test.")
-    other_proc_desc = fields.Text('Other Process Details', 
-        help="Describe the other process.")
-
-    #Quality Control:
-    vision = fields.Boolean('Vision', 
-        help="The product requires vision inspection.")
-    vision_desc = fields.Text('Vision Details', 
-        help="Describe the vision inspection requirements.")
-    flow_test = fields.Boolean('Flow Test', 
-        help="The product requires a flow test.")
-    flow_desc = fields.Text('Flow Details', 
-        help="Describe the flow test requirements.")
-    leak_test = fields.Boolean('Leak Test', 
-        help="The product requires a leak test.")
-    leak_desc = fields.Text('Leak Details', 
-        help="Describe the leak test requirements.")
-    prime_test = fields.Boolean('Prime Test', 
-        help="The product requires a prime test.")
-    prime_desc = fields.Text('Prime Details', 
-        help="Describe the prime test requirements.")
-    other_test = fields.Boolean('Other Test', 
-        help="The product requires another type of test.")
-    other_test_desc = fields.Text('Other Test Details', 
-        help="Describe the other test requirements.")
-
+      
     #Machine Specs:
     machine_spec_ids = fields.One2many('crm_eto.machine_spec', 'opportunity_id',
         help="This links the various machine specs to a specific opportunity.")
+    
+    #With automated lead collection techniques it may be required to validate the legitimacy of the leads:
+    lead_validated_by = fields.Char(string='Validated By', default='')
+    
+    #@api.model
+    def action_button_validate_lead(self, cr, uid, ids, context=None):
+        """
+        Validate a particular Lead, assign the current user to that lead as the validator.
+        """
+        #print self.env
+        #print self.env.user
+        #print self.env.user.id
+        self.lead_validated_by=uid
+        #return self.pool.get('crm.lead').redirect_opportunity_view(cr, uid, opportunity_dict[ids[0]], context)
+
 
 class machine_spec(models.Model):
     """ Class Summary Description Missing.

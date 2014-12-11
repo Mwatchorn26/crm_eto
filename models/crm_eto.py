@@ -56,19 +56,21 @@ class leads(models.Model):
         help="This links the various machine specs to a specific opportunity.")
     
     #With automated lead collection techniques it may be required to validate the legitimacy of the leads:
-    lead_validated_by = fields.Char(string='Validated By', default='')
+    lead_validated_by = fields.Many2one('res.users', 'Validated By', select=True, track_visibility='onchange')
     
-    #@api.model
     def action_button_validate_lead(self, cr, uid, ids, context=None):
         """
         Validate a particular Lead, assign the current user to that lead as the validator.
         """
-        #print self.env
-        #print self.env.user
-        #print self.env.user.id
-        self.lead_validated_by=uid
-        #return self.pool.get('crm.lead').redirect_opportunity_view(cr, uid, opportunity_dict[ids[0]], context)
-
+        for lead in self.browse(cr, uid, ids, context=context):
+            values = {'lead_validated_by': uid}
+            print "------------"
+            print "------------"
+            print values
+            print "------------"
+            print "------------"
+            self.write(cr, uid, [lead.id], values, context=context)
+        return True
 
 class machine_spec(models.Model):
     """ Class Summary Description Missing.

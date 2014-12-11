@@ -62,13 +62,10 @@ class leads(models.Model):
         """
         Validate a particular Lead, assign the current user to that lead as the validator.
         """
+        #this shouldn't be looped (I don't think?) but this code works,..
+        #I'm not sure why I had to revert to V7 API code for this part. (including the function parameters)
         for lead in self.browse(cr, uid, ids, context=context):
             values = {'lead_validated_by': uid}
-            print "------------"
-            print "------------"
-            print values
-            print "------------"
-            print "------------"
             self.write(cr, uid, [lead.id], values, context=context)
         return True
 

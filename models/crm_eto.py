@@ -70,9 +70,11 @@ class leads(models.Model):
         return True
 
 class machine_spec(models.Model):
-    """ Class Summary Description Missing.
+    """ One of one or many specifications required by the customer.
    
-    Class Details Missing.....
+    The sales team set specifications for an opportunity. Each spec uses
+    a base "spec variant" (like Vision) and allows the salesman to add
+    specifics about that opportunity. ("Low res vision part present",...) 
     """
     _name = "crm_eto.machine_spec"
     opportunity_id = fields.Many2one('crm.lead')

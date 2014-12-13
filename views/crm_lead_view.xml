@@ -27,6 +27,7 @@
             <field name="arch" type="xml">
         		<field name="user_id" position="after">               
 					<field name="lead_validated_by" />
+					<field name="linkedin_url" widget="url"/>				
             	</field>
             </field>
         </record>

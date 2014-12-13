@@ -59,6 +59,7 @@ class leads(models.Model):
     lead_validated_by = fields.Many2one('res.users', 'Validated By', select=True, track_visibility='onchange')
     linkedin_url = fields.Char(string="LinkedIn URL")
     email_domain = fields.Char(string="Email Domain")
+    company_website = fields.Char(string="Company Website")
     
     def action_button_validate_lead(self, cr, uid, ids, context=None):
         """

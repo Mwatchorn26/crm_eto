@@ -16,13 +16,15 @@
                	   			<group>
 	               	   			<group>
 	                   				<field name="project_code">Project Code</field>
+	                   				<field name="partner_name">Company</field>
+	                   			</group>
+	                   			<group>
 	                   				<field name="project_name">Project Name</field>
-								</group>
-								<group>                   			
-	                   				<field name="machine_rate">Machine Rate</field>
-	                  				<field name="machine_model">Machine Model</field>
-	                  				<field name="scrap_rate">Scrap Rate</field>
-								</group>
+	                   				<field name="oppor_change_reason" widget="selection"/>
+	                   				<field name="oppor_other_reason">Reason</field>
+	                   				<field name="oppor_job_type">Job Type</field>
+	                   				<field name="price_model">Price Model</field>
+	                   			</group>
 							</group>                  			
 						</div>
                    	</xpath>
@@ -30,7 +32,16 @@
 
 	            <page string="Internal Notes" position="before">
 	                <page string="Machine Specs">
-	                    <field name="machine_spec_ids" colspan="4" nolabel="1">	                    	
+	                	<group>
+							<group>                   			
+	               				<field name="machine_rate">Machine Rate</field>
+	              				<field name="machine_model">Machine Model</field>
+	              			</group>
+	              			<group>
+	              				<field name="scrap_rate">Scrap Rate</field>
+							</group>
+						</group> 
+	                    <field name="machine_spec_ids" colspan="4" nolabel="1">                  	
 	                        <tree editable="bottom" string="Machine Specs">
 	                            <field name="spec_variant" widget="selection"/>
 								<field name="desc" />

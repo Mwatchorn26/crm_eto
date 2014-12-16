@@ -38,11 +38,42 @@ class leads(models.Model):
     _inherit = "crm.lead"
     #Add the new columns to the database table. (These are specifically for 
     #opportunities, but  Opportunities and Leads share the same table.)
-    project_code = fields.Char('Project Code', size=7, required=False, help="Six digit code for each project like 'ABC026'")    
+    project_code = fields.Char('Project Code', size=20, required=False, help="Six digit code for each project like 'ABC026'")    
     project_name = fields.Char('Project Name', size=128, required=False, help="Typically the customer's name for the product or their name for the machine.")
     machine_rate = fields.Integer('Machine Rate', required=False, help="Number of parts per minute requested by the client.")
     machine_model= fields.Many2one('crm_eto.eto_model', string="Machine Model",required=False, help="Select the most appropriate model")
     scrap_rate = fields.Char('Scrap Rate', size=50, required=False, help="The acceptable scrap rate as defined by the customer at the outset of the project.")
+    oppor_change_reason = fields.Selection([
+                                            ('concept', 'Concept'),
+                                            ('delivery', 'Delivery'),
+                                            ('distance','Distance'),
+                                            ('lack_of_funding','Lack of Funding'),
+                                            ('no_quote','No Quote'),
+                                            ('poor_fit','Poor Fit'),
+                                            ('price','Price'),
+                                            ('re-opened','Re-Opened'),
+                                            ('relationship','Relationship'),
+                                            ('timing','Timing'),
+                                            ('unknown','Unknown'),
+                                            ('was_only_budgetary','Was only Budgetary'),
+                                            ('other','Other')
+                                            ], required=True, string="Reason For Change")
+    oppor_other_reason = fields.Char('Other Reason', size=25, help="Enter the reason for the state change")
+    price_model = fields.Selection([
+                                            ('fixed_price', 'Fixed Price'),                                    
+                                            ('t&m','T&M'),
+                                            ('other','Other')
+                                            ], required=True, string="Cost Model")
+    
+    
+    oppor_job_type = fields.Selection([     ('retrofit', 'Retrofit'),
+                                            ('budgetary', 'Budgetary'),
+                                            ('build_only','Build Only'),
+                                            ('design_and_build','Design and Build'),
+                                            ('engineering_only','Engineering Only'),
+                                            ('other','Other')
+                                            ], required=True, string="Job Type")
+
 
     #Project Dates:
     proposal_date = fields.Date('Proposal Date', help="Date the [next] proposal is due.")

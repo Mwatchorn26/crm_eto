@@ -57,13 +57,13 @@ class leads(models.Model):
                                             ('unknown','Unknown'),
                                             ('was_only_budgetary','Was only Budgetary'),
                                             ('other','Other')
-                                            ], required=True, string="Reason For Change")
+                                            ], required=False, string="Reason For Change")
     oppor_other_reason = fields.Char('Other Reason', size=25, help="Enter the reason for the state change")
     price_model = fields.Selection([
                                             ('fixed_price', 'Fixed Price'),                                    
                                             ('t&m','T&M'),
                                             ('other','Other')
-                                            ], required=True, string="Cost Model")
+                                            ], required=False, string="Cost Model")
     
     
     oppor_job_type = fields.Selection([     ('retrofit', 'Retrofit'),
@@ -72,7 +72,7 @@ class leads(models.Model):
                                             ('design_and_build','Design and Build'),
                                             ('engineering_only','Engineering Only'),
                                             ('other','Other')
-                                            ], required=True, string="Job Type")
+                                            ], required=False, string="Job Type")
 
 
     #Project Dates:

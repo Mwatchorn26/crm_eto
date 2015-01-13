@@ -10,20 +10,24 @@
             <field name="description">Generic Level 3 Machine</field>
         </record>        
         <record model="crm_eto.eto_model" id="eto_model_2" >
-            <field name="name">L3 - Polymist</field>
+            <field name="name">Polymist Family - L3</field>
             <field name="description">Level 3 Polymist</field>
         </record>        
         <record model="crm_eto.eto_model" id="eto_model_3" >
-            <field name="name">L3 - One and Done</field>
+            <field name="name">One-and-Done Family - L3</field>
             <field name="description">Base Level 3 Machine - No Pod Loaders</field>
         </record>        
         <record model="crm_eto.eto_model" id="eto_model_4" >
-            <field name="name">L3 - Pod Loaders</field>
-            <field name="description">Pod Loader for a One and Done Level 3 Machine</field>
+            <field name="name">BAP Family - L3</field>
+            <field name="description">Level 3 Machine</field>
         </record>        
         <record model="crm_eto.eto_model" id="eto_model_5" >
-            <field name="name">Universal Closure</field>
-            <field name="description">Universal Assembly Closure Machine</field>
+            <field name="name">Flexible Closing Family</field>
+            <field name="description">Flexible Closing Family</field>
+        </record>        
+        <record model="crm_eto.eto_model" id="eto_model_5" >
+            <field name="name">Gen1 Vertical Assembly Family - L3</field>
+            <field name="description">First Generation Verical Assembly Family - L3</field>
         </record>
         
           <!--      

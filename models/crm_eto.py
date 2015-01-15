@@ -73,6 +73,12 @@ class leads(models.Model):
                                             ('engineering_only','Engineering Only'),
                                             ('other','Other')
                                             ], required=False, string="Job Type")
+#    email_status = fields.Selection([
+#                                            ('unknown', 'Unknown'),
+#                                            ('valid', 'Valid'),
+#                                            ('accepted', 'Server Accepted'),
+#                                            ('bad_mailbox', 'Bad Mailbox')
+#                                            ], required=False, string="Email Status", default='unknown', track_visibility='onchange')  
 
 
     #Project Dates:

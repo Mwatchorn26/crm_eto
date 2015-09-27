@@ -17,6 +17,7 @@
 	               	   			<group>
 	                   				<field name="project_code">Project Code</field>
 	                   				<field name="partner_name">Company</field>
+	                   				<field name="rfq_date">RFQ Date</field>
 	                   				<field name="rfq_fiscal_yr">RFQ Year</field>
 	                   				<field name="rfq_fiscal_qtr" widget="selection"/>
 	                   				<field name="proposal_fiscal_yr">Proposal Year</field>

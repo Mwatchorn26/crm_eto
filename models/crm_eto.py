@@ -92,7 +92,7 @@ class leads(models.Model):
     po_fiscal_yr = fields.Char('PO Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
     po_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'PO Fiscal Qtr')
     proposal_fiscal_yr = fields.Char('Proposal Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
-    poroposal_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'Proposal Fiscal Qtr')
+    proposal_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'Proposal Fiscal Qtr')
       
     #Machine Specs:
     machine_spec_ids = fields.One2many('crm_eto.machine_spec', 'opportunity_id',

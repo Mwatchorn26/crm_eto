@@ -87,6 +87,7 @@ class leads(models.Model):
     animation_date = fields.Date('Animation Date', help="Date the animation file(s) are due.")
     decision_date = fields.Date('Decision Date', help="Date the client anticipates a decision will be made.")
     delivery_date = fields.Date('Delivery Date', help="Date the client anticipates delivery to their facility.")
+    rfq_date = fields.Date('RFQ Date', help="Date the RFQ was received.")
     rfq_fiscal_yr = fields.Char('RFQ Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
     rfq_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'RFQ Fiscal Qtr')
     po_fiscal_yr = fields.Char('PO Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")

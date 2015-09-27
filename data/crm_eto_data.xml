@@ -92,6 +92,10 @@
 		</record>
         <record model="crm_eto.spec_variant" id="spec_variant_12" >
             <field name="process_or_quality">quality</field>
+            <field name="name">Spark Test</field>
+		</record>
+        <record model="crm_eto.spec_variant" id="spec_variant_13" >
+            <field name="process_or_quality">quality</field>
             <field name="name">Other Test</field>
 		</record>
         

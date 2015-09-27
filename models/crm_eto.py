@@ -82,18 +82,18 @@ class leads(models.Model):
 
 
     #Project Dates:
+    rfq_date = fields.Date('RFQ Date', help="Date the RFQ was received.")
     proposal_date = fields.Date('Proposal Date', help="Date the [next] proposal is due.")
     concept_date = fields.Date('Concept Date', help="Date the concept drawings are due.")
     animation_date = fields.Date('Animation Date', help="Date the animation file(s) are due.")
     decision_date = fields.Date('Decision Date', help="Date the client anticipates a decision will be made.")
     delivery_date = fields.Date('Delivery Date', help="Date the client anticipates delivery to their facility.")
-    rfq_date = fields.Date('RFQ Date', help="Date the RFQ was received.")
     rfq_fiscal_yr = fields.Char('RFQ Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
     rfq_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'RFQ Fiscal Qtr')
-    po_fiscal_yr = fields.Char('PO Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
-    po_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'PO Fiscal Qtr')
     proposal_fiscal_yr = fields.Char('Proposal Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
     proposal_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'Proposal Fiscal Qtr')
+    po_fiscal_yr = fields.Char('PO Fiscal Year', size=4, required=False, help="4 digit year (like: '2018')")
+    po_fiscal_qtr = fields.Selection([('Q1','Q1'),('Q2','Q2'),('Q3','Q3'),('Q4','Q4')],'PO Fiscal Qtr')
       
     #Machine Specs:
     machine_spec_ids = fields.One2many('crm_eto.machine_spec', 'opportunity_id',

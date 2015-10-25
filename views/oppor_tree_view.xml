@@ -1,46 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<openerp>
+        <openerp>
     <data>
-	        <!-- 
-	        Make the Tree view editable. 
-	        Rearrange the list of fields.
-	        Added Project field based on the new crm.project field 
-	        -->	        
-		   <record model="ir.ui.view" id="crm_e2o_oppor_tree_view">
+                <!--
+                Make the Tree view editable.
+                Rearrange the list of fields.
+                Added Project field based on the new crm.project field
+                -->
+                   <record model="ir.ui.view" id="crm_e2o_oppor_tree_view">
             <field name="name">Opportunities Tree Inherit</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
             <field name="arch" type="xml">
-            	<data>
-            		<!--            		
-            		<tree position="attributes">               
-						<attribute name="editable">top</attribute>
-                	</tree>
-            		-->
-            		<xpath expr="//tree" position="replace">
-						<tree string="Opportunities" fonts="bold:message_unread==True" colors="gray:probability == 100;red:date_deadline and (date_deadline &lt; current_date)" editable="top">
-							<field name="partner_id" string="Customer"/>
-							<field name="project_code"/>
-							<field name="name" string="Project"/>
-							<field name="stage_id"/>
-							<field name="decision_date"/>
-							<field name="delivery_date"/>
-							<field name="planned_revenue" sum="Revenue"/>
-							<field name="user_id"/>
-							<field name="priority"/>
-							<field name="proposal_date"/>
-							<field name="animation_date"/>
-							<field name="concept_date"/>
-							<field name="description"/>
-							<field name="date_deadline" invisible="1"/>
-							<field name="referred" invisible="1"/>
-							<field name="message_unread" invisible="1"/>
-							<field name="probability" invisible="1"/>
-							<field name="write_date" invisible="1"/>
-						</tree>
-					</xpath>
-				</data>
+                <data>
+                        <!--
+                        <tree position="attributes">
+                                                <attribute name="editable">top</attribute>
+                        </tree>
+                        -->
+                        <xpath expr="//tree" position="replace">
+                                                <tree string="Opportunities" fonts="bold:message_unread==True" colors="gray:probability == 100;red:date_deadline and (date_deadline &lt; current_date)" editable="top">
+                                                        <field name="project_code"/>
+                                                        <field name="name" string="Project"/>
+                                                        <field name="partner_name"/>
+                                                        <field name="project_name"/>
+                                                        <field name="machine_rate"/>
+                                                        <field name="machine_model"/>
+                                                        <field name="partner_id" string="Customer"/>
+                                                        <!-- <field name="stage"/> -->
+                                                        <field name="engines"/>
+                                                        <field name="relative_increment"/>
+                                                        <field name="planned_revenue" sum="Planned Revenue"/>
+                                                        <field name="booked_revenue" sum="Booked Revenue"/>
+                                                        <field name="probability"/>
+                                                        <field name="rfq_date"/>
+                                                        <field name="rfq_fiscal_yr"/>
+                                                        <field name="rfq_fiscal_qtr" widget="selection"/>
+                                                        <field name="proposal_fiscal_yr"/>
+                                                        <field name="proposal_fiscal_qtr" widget="selection"/>
+                                                        <field name="po_fiscal_yr"/>
+                                                        <field name="po_fiscal_qtr" widget="selection"/>
+                                                        <field name="delivery_yr"/>
+                                                        <field name="delivery_qtr" widget="selection"/>
+                                                        <field name="stage_id"/>
+                                                        <field name="act_eng_hrs"/>
+                                                        <field name="an_prod_vol"/>
+                                                        <field name="budgeted_eng_hrs"/>
+                                                        <field name="decision_date"/>
+                                                        <field name="delivery_date"/>
+                                                        <field name="oppor_change_reason"/>
+                                                        <field name="oppor_other_reason"/>
+                                                        <field name="oppor_job_type"/>
+                                                        <field name="price_model"/>
+                                                        <field name="user_id"/>
+                                                        <field name="po_date"/>
+                                                        <field name="delivery"/>
+                                                        <field name="priority"/>
+                                                        <field name="proposal_date"/>
+                                                        <field name="animation_date"/>
+                                                        <field name="concept_date"/>
+                                                        <!--<field name="description"/>-->
+                                                        <field name="max_db"/>
+                                                        <field name="days_per_week"/>
+                                                        <field name="shifts_per_day"/>
+                                                        <field name="power"/>
+                                                        <field name="spec_mtbf"/>
+                                                        <field name="spec_mtbf"/>
+                                                        <field name="spec_cpk"/>
+                                                        <field name="spec_oee"/>
+                                                        <field name="spec_eff"/>
+                                                        <field name="oppor_job_type"/>
+                                                        <field name="user_id"/>
+                                                        <field name="price_model"/>
+                                                        <!--<field name="categ_ids/id"/>-->
+                                                        <field name="title_action"/>
+                                                        <!--<field name="source"/>-->
+                                                        <field name="business_type"/>
+                                                        <field name="prob_of_occurrence"/>
+                                                        <field name="prob_of_our_business"/>
+                                                        <field name="oppor_currency"/>
+                                                        <field name="business_unit"/>
+                                                        <field name="prod_line"/>
+                                                        <field name="prototyping"/>
+                                                        <field name="proposal_type"/>
+                                                        <field name="confidentiality_covers"/>
+                                                        <field name="nda"/>
+                                                        <field name="num_of_machines"/>
+                                                        <field name="client_budget"/>
+                                                        <field name="project_is_funded"/>
+                                                        <field name="client_labour_cost"/>
+                                                        <field name="payback_required"/>
+                                                        <field name="new_product"/>
+                                                        <field name="process_improvement"/>
+                                                        <field name="replacing_process"/>
+                                                        <field name="automate_manual_process"/>
+                                                        <field name="general_machine_specs"/>
+                                                        <field name="detailed_project_specs"/>
+                                                        <field name="product_drawings"/>
+                                                        <field name="sample_parts"/>
+                                                        <field name="integrate_w_other_machines"/>
+                                                        <field name="size_or_weight_constraints"/>
+                                                        <field name="climate_controlled"/>
+                                                        <field name="materials_to_avoid"/>
+                                                        <field name="materials_to_use"/>
+                                                        <field name="date_deadline" invisible="1"/>
+                                                        <field name="referred" invisible="1"/>
+                                                        <field name="message_unread" invisible="1"/>
+                                                        <field name="write_date" invisible="1"/>
+                                                </tree>
+                                        </xpath>
+                                </data>
             </field>
         </record>
-	</data>
+        </data>
 </openerp>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_eto_machine_spec,access_crm_eto_machine_spec,model_crm_eto_machine_spec,,1,1,1,1
+access_crm_eto_spec_variant,access_crm_eto_spec_variant,model_crm_eto_spec_variant,,1,1,1,1
+access_crm_eto_eto_model,access_crm_eto_eto_model,model_crm_eto_eto_model,,1,1,1,1
+access_crm_eto_product_component,access_crm_eto_product_component,model_crm_eto_product_component,,1,1,1,1
+access_crm_eto_operation,access_crm_eto_operation,model_crm_eto_operation,,1,1,1,1

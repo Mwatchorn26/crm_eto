@@ -1,70 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<openerp>
+        <openerp>
     <data>
-   		<!-- 							-->
-		<!-- crm.lead Inherit Addon		-->
-		<!-- 							-->				
-		<record model="ir.ui.view" id="crm_case_form_view_oppor">
-	    	<field name="name">CRM - Opportuntities Form - E2O Inherit</field>
-	    	<field name="model">crm.lead</field>
-	    	<field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
-	    	<field name="arch" type="xml">
-		       	<data>
-					<!-- Opportunity Extras -->
-               	   	<xpath expr="//sheet/div[2]" position="after">
-               	   		<div id="crm_ote_addons">
-               	   			<group>
-	               	   			<group>
-	                   				<field name="project_code">Project Code</field>
-	                   				<field name="partner_name">Company</field>
-	                   				<field name="rfq_date">RFQ Date</field>
-	                   				<field name="rfq_fiscal_yr">RFQ Year</field>
-	                   				<field name="rfq_fiscal_qtr" widget="selection"/>
-	                   				<field name="proposal_fiscal_yr">Proposal Year</field>
-	                   				<field name="proposal_fiscal_qtr" widget="selection"/>
-	                   				<field name="po_fiscal_yr">PO Year</field>
-	                   				<field name="po_fiscal_qtr" widget="selection"/>
-	                   			</group>
-	                   			<group>
-	                   				<field name="project_name">Project Name</field>
-	                   				<field name="oppor_change_reason" widget="selection"/>
-	                   				<field name="oppor_other_reason">Reason</field>
-	                   				<field name="oppor_job_type">Job Type</field>
-	                   				<field name="price_model">Price Model</field>
-	                   			</group>
-							</group>                  			
-						</div>
-                   	</xpath>
-                  
+                <!--                                                    -->
+                <!-- crm.lead Inherit Addon             -->
+                <!--                                                    -->
+                <record model="ir.ui.view" id="crm_case_form_view_oppor">
+                <field name="name">CRM - Opportuntities Form - E2O Inherit</field>
+                <field name="model">crm.lead</field>
+                <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+                <field name="arch" type="xml">
+                        <data>
+                                        <!-- Opportunity Extras -->
+                        <xpath expr="//sheet/div[2]" position="after">
+                                <div id="crm_ote_addons">
+                                        <group>
+                                                <group>
+                                                        <field name="project_code"/>
+                                                        <field name="partner_name"/>
+                                                        <field name="oppor_job_type"/>
+                                                        <field name="price_model"/>
+                                                </group>
+                                                <group>
+                                                        <field name="project_name"/>
+                                                        <field name="oppor_change_reason" widget="selection"/>
+                                                        <field name="oppor_other_reason"/>
+                                                        <field name="booked_revenue" widget="monetary" options="{'currency_field': 'company_currency'}" />
+                                                </group>
+                                        </group>
+                                </div>
+                        </xpath>
 
-	            <page string="Internal Notes" position="before">
-	                <page string="Machine Specs">
-	                	<group>
-							<group>                   			
-	               				<field name="machine_rate">Machine Rate</field>
-	              				<field name="machine_model">Machine Model</field>
-	              			</group>
-	              			<group>
-	              				<field name="scrap_rate">Scrap Rate</field>
-							</group>
-						</group> 
-	                    <field name="machine_spec_ids" colspan="4" nolabel="1">                  	
-	                        <tree editable="bottom" string="Machine Specs">
-	                            <field name="spec_variant" widget="selection"/>
-								<field name="desc" />
-								<field name="spec_variant_pq" />            
-							</tree>
-	                    </field>
-	                </page>
-	            </page>
-         	
-           		</data>
-               	
-	    	</field>
-		</record>
-		
-		<!-- Machine Specs Variants Tree View -->
-		 
+
+                    <page string="Internal Notes" position="before">
+                        <page string="Machine Specs">
+                                <group>
+                                        <group>
+                                                <field name="machine_rate">Machine Rate</field>
+                                                <field name="machine_model">Machine Model</field>
+                                                <field name="an_prod_vol"></field>
+                                                <field name="budgeted_eng_hrs"></field>
+                                                <field name="act_eng_hrs"></field>
+                                                <field name="spec_oee"></field>
+                                                <field name="spec_eff"></field>
+                                                <field name="engines"></field>
+                                        </group>
+                                        <group>
+                                                <field name="scrap_rate">Scrap Rate</field>
+                                                <field name="max_db"></field>
+                                                <field name="days_per_week"></field>
+                                                <field name="shifts_per_day"></field>
+                                                <field name="power"></field>
+                                                <field name="spec_mtbf"></field>
+                                                <field name="spec_mttr"></field>
+                                        </group>
+                                </group>
+                            <field name="machine_spec_ids" colspan="4" nolabel="1">
+                                <tree editable="bottom" string="Machine Specs">
+                                    <field name="spec_variant" widget="selection"/>
+                                                                <field name="desc" />
+                                                                <field name="spec_variant_pq" />
+                                                        </tree>
+                            </field>
+                        </page>
+                        <page string="Assembly Process">
+                                <group>
+                                    <group>
+                                    <field name="component_ids" colspan="2" nolabel="1">
+                                        <tree editable="bottom" string="Components (Parts to Assemble)">
+                                            <field name="part"/>
+                                        </tree>
+                                    </field>
+                                    </group>
+                                    <group>
+                                    <field name="operation_ids" colspan="2" nolabel="1">
+                                        <tree editable="bottom" string="Sequence of Operations">
+                                            <field name="operation"/>
+                                        </tree>
+                                    </field>
+                                    </group>
+                                </group>
+                        </page>
+                        <page string="Project Dates">
+                                <group>
+                                        <group>
+                                                        <field name="rfq_date"/>
+                                                        <field name="proposal_date"/>
+                                                        <field name="po_date"/>
+                                                        <field name="delivery"/>
+                                                        <div>
+                                                                <label for="rfq_fiscal_qtr"/>
+                                                                <field name="rfq_fiscal_yr" class="oe_inline" />
+                                                                <field name="rfq_fiscal_qtr" widget="selection" class="oe_inline" nolabel="1"/>
+                                                        </div>
+                                                        <div>
+                                                                <label for="proposal_fiscal_qtr"/>
+                                                                <field name="proposal_fiscal_yr" class="oe_inline" />
+                                                                <field name="proposal_fiscal_qtr" widget="selection" class="oe_inline" nolabel="1"/>
+                                                        </div>
+                                                        <div>
+                                                                <label for="po_fiscal_qtr"/>
+                                                                <field name="po_fiscal_yr" class="oe_inline" />
+                                                                <field name="po_fiscal_qtr" widget="selection" class="oe_inline" nolabel="1"/>
+                                                        </div>
+                                                        <div>
+                                                                <label for="delivery_qtr"/>
+                                                                <field name="delivery_yr" class="oe_inline" />
+                                                                <field name="delivery_qtr" widget="selection" class="oe_inline" nolabel="1"/>
+                                                        </div>
+                                        </group>
+
+                                        <group>
+                                                <group>
+                                                Weeks Since RFQ: [calculated field]<br/>
+                                                Days to Proposal: [calculated field]<br/>
+                                                </group>
+                                                <group>
+                                                Days Since Proposal: [calculated field]<br/>
+                                                Weeks Since Proposal: [calculated field]<br/>
+                                                </group>
+                                        </group>
+                                </group>
+
+                        </page>
+                    </page>
+
+                        </data>
+
+                </field>
+                </record>
+
+                <!-- Machine Specs Variants Tree View -->
+
         <record id="crm_machine_spec_tree-view" model="ir.ui.view">
             <field name="name">crm_eto.machine_spec.tree</field>
             <field name="model">crm_eto.spec_variant</field>
@@ -75,9 +141,9 @@
                 </tree>
             </field>
         </record>
-		
-		<!-- Machine Spec Variants Form View -->
-	
+
+                <!-- Machine Spec Variants Form View -->
+
         <record id="crm_oppor_machine_spec_action" model="ir.actions.act_window">
             <field name="name">Spec Variant</field>
             <field name="res_model">crm_eto.spec_variant</field>
@@ -92,17 +158,13 @@
             </field>
         </record>
 
-        <menuitem 	action="crm_oppor_machine_spec_action"
-            		id="menu_crm_oppor_machine_spec" 
-        			name="Machine Specs"
-            		parent="base.menu_crm_config_lead" 
-        			sequence="1" 
-        			groups="base.group_no_one"/>
-		
-	</data>
+        <menuitem       action="crm_oppor_machine_spec_action"
+                        id="menu_crm_oppor_machine_spec"
+                                name="Machine Specs"
+                        parent="base.menu_crm_config_lead"
+                                sequence="1"
+                                groups="base.group_no_one"/>
+
+        </data>
 </openerp>
-
-
-
-
 

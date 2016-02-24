@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
+       <?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
         <record model="crm_eto.eto_model" id="eto_model_0" >
             <field name="name">L2</field>
             <field name="description">Level 2 Machine</field>
@@ -8,28 +11,44 @@
         <record model="crm_eto.eto_model" id="eto_model_1" >
             <field name="name">L3</field>
             <field name="description">Generic Level 3 Machine</field>
-        </record>        
-        <record model="crm_eto.eto_model" id="eto_model_2" >
-            <field name="name">Polymist Family - L3</field>
-            <field name="description">Level 3 Polymist</field>
-        </record>        
-        <record model="crm_eto.eto_model" id="eto_model_3" >
-            <field name="name">One-and-Done Family - L3</field>
-            <field name="description">Base Level 3 Machine - No Pod Loaders</field>
-        </record>        
-        <record model="crm_eto.eto_model" id="eto_model_4" >
-            <field name="name">BAP Family - L3</field>
-            <field name="description">Level 3 Machine</field>
-        </record>        
-        <record model="crm_eto.eto_model" id="eto_model_5" >
-            <field name="name">Flexible Closing Family</field>
-            <field name="description">Flexible Closing Family</field>
-        </record>        
-        <record model="crm_eto.eto_model" id="eto_model_5" >
-            <field name="name">Gen1 Vertical Assembly Family - L3</field>
-            <field name="description">First Generation Verical Assembly Family - L3</field>
         </record>
-        
+        <record model="crm_eto.eto_model" id="eto_model_2" >
+            <field name="name">L3 (Transport)</field>
+            <field name="description">Second Generation - L3</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_3" >
+            <field name="name">Closing</field>
+            <field name="description">Flexible Closing Family</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_4" >
+            <field name="name">L3 (Flexlink)</field>
+            <field name="description">First Generation - L3</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_5" >
+            <field name="name">N/A</field>
+            <field name="description">Not Applicable</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_6" >
+            <field name="name">L3 (Polymist Family)</field>
+            <field name="description">Level 3 Polymist</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_7" >
+            <field name="name">TBD</field>
+            <field name="description">To Be Determined</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_8" >
+            <field name="name">L1</field>
+            <field name="description">First Generation - L1</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_9" >
+            <field name="name">Multiplex (Standalone)</field>
+            <field name="description">Multiplex (Standalone)</field>
+        </record>
+        <record model="crm_eto.eto_model" id="eto_model_10" >
+            <field name="name">Dual Runner</field>
+            <field name="description">Dual Runner</field>
+        </record>
+
           <!--      
         <record model="crm_eto.machine_spec" id="mach_spec_0" >
         	<field name="type=">process</field>
@@ -42,63 +61,79 @@
         <record model="crm_eto.spec_variant" id="spec_variant_0" >
             <field name="process_or_quality">process</field>
             <field name="name">Detailed Specs</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_1" >
             <field name="process_or_quality">process</field>
             <field name="name">CAD models are provided</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_2" >
             <field name="process_or_quality">process</field>
             <field name="name">Part Drawings</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_3" >
             <field name="process_or_quality">process</field>
             <field name="name">Vision</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_4" >
             <field name="process_or_quality">process</field>
             <field name="name">MBU Axis</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_5" >
             <field name="process_or_quality">process</field>
             <field name="name">Silicone</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_6" >
             <field name="process_or_quality">process</field>
             <field name="name">Torque</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_7" >
             <field name="process_or_quality">process</field>
             <field name="name">Other Process</field>
-		</record>
-		
+                </record>
+                
     <!-- Quality Control -->
-    
+
         <record model="crm_eto.spec_variant" id="spec_variant_8" >
             <field name="process_or_quality">quality</field>
             <field name="name">Vision</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_9" >
             <field name="process_or_quality">quality</field>
             <field name="name">Flow Test</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_10" >
             <field name="process_or_quality">quality</field>
             <field name="name">Leak Test</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_11" >
             <field name="process_or_quality">quality</field>
             <field name="name">Prime Test</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_12" >
             <field name="process_or_quality">quality</field>
             <field name="name">Spark Test</field>
-		</record>
+                </record>
         <record model="crm_eto.spec_variant" id="spec_variant_13" >
             <field name="process_or_quality">quality</field>
             <field name="name">Other Test</field>
-		</record>
-        
-        
+                </record>
+        <record model="crm_eto.spec_variant" id="spec_variant_14" >
+            <field name="process_or_quality">process</field>
+            <field name="name">Integrates with other machines</field>
+                </record>
+        <record model="crm_eto.spec_variant" id="spec_variant_15" >
+            <field name="process_or_quality">process</field>
+            <field name="name">Size or Weight Constraint</field>
+                </record>
+        <record model="crm_eto.spec_variant" id="spec_variant_17" >
+            <field name="process_or_quality">process</field>
+            <field name="name">Materials that must be avoided</field>
+                </record>
+        <record model="crm_eto.spec_variant" id="spec_variant_18" >
+            <field name="process_or_quality">process</field>
+            <field name="name">Materials that must be used</field>
+                </record>
+
+
     </data>
 </openerp>

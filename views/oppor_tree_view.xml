@@ -41,7 +41,8 @@
                                                         <field name="po_fiscal_qtr" widget="selection"/>
                                                         <field name="delivery_yr"/>
                                                         <field name="delivery_qtr" widget="selection"/>
-                                                        <field name="stage_id"/>
+                                                       <field name="stage_id"/>
+                                                        <field name="section_id"/>
                                                         <field name="act_eng_hrs"/>
                                                         <field name="an_prod_vol"/>
                                                         <field name="budgeted_eng_hrs"/>

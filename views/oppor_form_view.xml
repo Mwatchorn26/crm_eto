@@ -29,8 +29,6 @@
                                         </group>
                                 </div>
                         </xpath>
-
-
                     <page string="Internal Notes" position="before">
                         <page string="Machine Specs">
                                 <group>
@@ -167,4 +165,3 @@
 
         </data>
 </openerp>
-

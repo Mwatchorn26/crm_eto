@@ -22,10 +22,14 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'crm'],
-    'data': ["views/oppor_tree_view.xml",
+    'data': [
+             "views/cust_tree_view.xml",
+             "views/oppor_menu_view.xml",
+             "views/oppor_tree_view.xml",
              "views/oppor_form_view.xml",
              "views/crm_lead_view.xml",
-             "data/crm_eto_data.xml"],
+             "data/crm_eto_data.xml",
+             "security/ir.model.access.csv"],
     'demo': [],
     'tests': [],
 }

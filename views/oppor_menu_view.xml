@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+        <data>
+                <record model="ir.actions.act_window" id="crm.crm_case_category_act_oppor11">
+                        <field name="domain">[('type','=','opportunity'),('stage_id', 'not in', ['Lost','Won','Dead','Declined','Abandoned', 'Suspended'])]
+                        </field>
+                </record>
+
+
+                <record model="ir.actions.act_window" id="action_crm_oppor_closed_view">
+                        <field name="name">Closed Opportunties</field>
+                        <field name="res_model">crm.lead</field>
+                        <field name="type">ir.actions.act_window</field>
+                        <field name="view_mode">kanban,tree,form</field>
+                        <field name="domain">[('type','=','opportunity'),('stage_id', 'in', ['Lost','Won','Dead','Declined','Abandoned', 'Suspended'])]</field>
+                </record>
+
+                <menuitem name="Opportunities (Closed)" parent="crm.menu_crm_opportunities" id="crm_menu_oppor_closed" action="action_crm_oppor_closed_view" />
+
+
+        </data>
+</openerp>

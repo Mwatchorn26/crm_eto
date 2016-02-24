@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-       <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
         <record model="crm_eto.eto_model" id="eto_model_0" >
             <field name="name">L2</field>
             <field name="description">Level 2 Machine</field>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_res_partner_tree_extras" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherit.extras</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+               <data>
+                <xpath expr="//tree" position="replace">
+                    <tree string="Contacts" editable="top">
+                        <field name="display_name"/>
+                        <field name="function" invisible="1"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="active"/>
+                        <field name="name"/>
+                        <field name="function"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                        <field name="street"/>
+                        <field name="is_company"/>
+                        <field name="user_id" invisible="1"/>
+                        <field name="is_company" invisible="1"/>
+                        <field name="country_id" invisible="1"/>
+                        <field name="parent_id" invisible="1"/>
+                    </tree>
+                </xpath>
+                </data>
+<!--                <field name="email" position="after">
+                    <field name="active"/>
+                    <field name="name"/>
+                    <field name="function"/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                    <field name="street"/>
+                    <field name="is_company"/>
+-->
+            </field>
+        </record>
+    </data>
+</openerp>

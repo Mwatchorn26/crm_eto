@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+        <data>
+                <record id="filter_opportunity_proposals_required" model="ir.filters">
+                    <field name="name">Proposals Required</field>
+                    <field name="model_id">crm.opportunity.report</field>
+                    <field name="domain">[('type','=','opportunity')]</field>
+                    <field name="user_id" eval="False"/>
+                    <field name="context">{'group_by': ['partner_id'], 'measures': ['project_code','project_name','machine_rate','stage', 'salesman','RFQ_date',]}</field>
+                </record>
+
+                <record id="filter_opportunity_projects" model="ir.filters">
+                    <field name="name">Projects</field>
+                    <field name="model_id">crm.opportunity.report</field>
+                    <field name="domain">[('type','=','opportunity')]</field>
+                    <field name="user_id" eval="False"/>
+                    <field name="context">{'group_by': ['project_code'], 'measures': ['project_name','status','machine_rate','salesman','proposal_date','booked_revenue','expected_revenue','total_revenue',]}</field>
+
+                <record id="filter_opportunity_summary" model="ir.filters">
+                    <field name="name">Project Annual Summary</field>
+                    <field name="model_id">crm.opportunity.report</field>
+                    <field name="domain">[('type','=','opportunity')]</field>
+                    <field name="user_id" eval="False"/>
+                    <field name="context">{'group_by': ['proposal_date:year'], 'measures': ['rfq_date','proposal_date','total_revenue','Engines', ]}</field>
+                </record>
+        </data>
+</openerp>

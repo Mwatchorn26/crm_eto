@@ -29,7 +29,9 @@
              "views/oppor_form_view.xml",
              "views/crm_lead_view.xml",
              "data/crm_eto_data.xml",
-             "security/ir.model.access.csv"],
+             "security/ir.model.access.csv",
+             "report/crm_eto_report_view.xml",
+             ],
     'demo': [],
     'tests': [],
 }

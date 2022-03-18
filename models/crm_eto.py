@@ -55,7 +55,7 @@ class leads(models.Model):
                                             ('relationship','Relationship'),
                                             ('timing','Timing'),
                                             ('unknown','Unknown'),
-                                            ('was_only_budgetary','Was only Budgetary'),
+                                            ('was_only_budgetary','Was Only Budgetary'),
                                             ('other','Other')
                                             ], required=False, string="Reason For Change")
     oppor_other_reason = fields.Char('Other Reason', size=25, help="Enter the reason for the state change")
